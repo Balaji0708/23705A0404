@@ -1,0 +1,23 @@
+import java.util.*;
+import java.util.Arrays;
+public class Main{
+  public static void main(String[]args){
+    long [] memo=new long[100];
+    System.out.println(fibmemo(71,memo));
+    System.out.println(Arrays.toString(memo));
+  }
+  public static long fib(Long n){
+    if(n==0||n==1)
+    return n;
+    return fib(n-1)+fib(n-2);
+  }
+  public static long fibmemo(long n,long[]memo){
+    if(n==0||n==1)
+    return n;
+    if(memo[(int)n]!=0)
+    return memo[(int)n];
+    long val=fibmemo(n-1,memo)+fibmemo(n-2,memo);
+    memo[(int)n]=val;
+    return memo[(int)n];
+  }
+}

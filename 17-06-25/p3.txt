@@ -1,0 +1,26 @@
+import java.util.Arrays;
+
+public class Main {
+  public static void main(String[] args) {
+    long[] memo = new long[100];
+    memo[0] = 1;
+
+    int number = 45;
+    System.out.println(factTabulation(number, memo));
+    System.out.println(Arrays.toString(Arrays.copyOfRange(memo, 0, number + 1)));
+  }
+
+  public static long factTabulation(int n, long[] memo) {
+    if (memo.length > n) {
+      for (int i = 1; i <= n; i++) {
+        if (memo[i] == 0) {
+          memo[i] = memo[i - 1] * i;
+        }
+      }
+      return memo[n];
+    }
+
+    System.out.println("Insufficient memory in memo array: " + memo.length);
+    return -1;
+  }
+}
