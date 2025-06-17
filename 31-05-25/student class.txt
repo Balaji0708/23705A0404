@@ -1,0 +1,25 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Student{
+    String name="Balaji";
+    String roll="23705A0404";
+    String branch="ECE";
+    int year=3;
+    char section='A';
+    void payfee(int amount){
+        System.out.println("paying "+amount+" to the college");
+    }
+    void attendence(int atte){
+        System.out.println("sending attendence to the student is "+atte);
+    
+    }
+}
+class Main {
+    public static void main(String[] args) {
+  Student s1=new Student();
+  Student s2=new Student();
+  s1.payfee(5000);
+  s1.attendence(88);
+    }
+}

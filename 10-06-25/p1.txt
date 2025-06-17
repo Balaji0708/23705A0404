@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+class Codechef {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num=sc.nextInt();
+        int temp=num;
+        int fact=1;
+        int temp1;
+        while(temp!=1){
+            //temp1=temp-1;
+            for(int i=temp-1;i>0;i--){
+                if(temp%i==0){
+                   fact=i; 
+                   break;
+                }
+            }
+            temp=(temp-1)/fact;
+        }
+        System.out.println(temp);
+    }
+}

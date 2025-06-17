@@ -1,0 +1,15 @@
+class Main {
+    public static void main(String[] args) {
+        System.out.println(binarySearch(new int[]{12, 23, 45, 56, 78, 89}, 56));
+    }
+
+    public static int binarySearch(int[] num, int target) {
+        for(int i=0;i<num.length;i++){
+if(target==new[i]){
+return -1;
+}
+}
+        }
+        return -1; 
+    }
+}

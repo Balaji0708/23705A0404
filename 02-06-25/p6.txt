@@ -1,0 +1,68 @@
+
+public class Main {
+    public static void main(String[] args) {
+        LinkedList list = new LinkedList();
+        list.insertEnd(100);
+        list.insertEnd(101);
+        list.insertEnd(102);
+        list.insertEnd(103);
+        list.insertAtPosition(201,2);
+        Node temp = list.head;
+        while (temp != null) {
+            System.out.print(temp.data + "-->");
+            temp = temp.next;
+        }
+    }
+}
+
+class Node {
+    int data;
+    Node next;
+    Node(int data){
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class LinkedList {
+    Node head;
+
+    void insertEnd(int data){
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+        Node temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = newNode;
+    }
+    void insertAtPosition(int data, int position) {
+        Node newNode = new Node(data);
+
+        if (position < 0) {
+            System.out.println("Invalid position.");
+            return;
+        }
+        if (position == 0) {
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+        Node temp = head;
+        int count = 0;
+        // Traverse to the node 
+        while (temp != null && count < position - 1) {
+            temp = temp.next;
+            count++;
+        }
+        if (temp == null) {
+            System.out.println("position out of bounds");
+            return;
+        }
+        newNode.next = temp.next;
+        temp.next = newNode;
+    }
+}

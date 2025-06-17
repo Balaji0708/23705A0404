@@ -1,0 +1,72 @@
+
+public class Main {
+    public static void main(String[] args) {
+        Stack stack = new Stack();
+        stack.push(21);
+        stack.push(30);
+        stack.push(20);
+        stack.push(30);
+        stack.push(20);
+        
+        int s = stack.peek();
+        stack.print();
+        System.out.println("\nPeek value is " + s);
+    }
+}
+
+class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class Stack {
+    Node top;
+    Stack() {
+        top = null;
+    }
+
+    boolean isEmpty() {
+        if(top == null){
+            System.err.println("Stack is empty");
+        return true;
+        }
+        else{
+            return false;
+        }
+    }
+    void push(int val) {
+        Node newNode = new Node(val);
+        newNode.next = top;
+        top = newNode;
+    }
+
+    int pop() {
+        if (isEmpty()) {
+            return -1;
+        }
+        int val = top.data;
+        top = top.next;
+        return val;
+    }
+
+    int peek() {
+        if (isEmpty()) {
+            System.err.println("Stack is empty");
+            return -1;
+        }
+        return top.data;
+    }
+
+    void print() {
+        Node temp = top;
+        while (temp != null) {
+            System.out.print("-->" + temp.data);
+            temp = temp.next;
+        }
+    }
+}

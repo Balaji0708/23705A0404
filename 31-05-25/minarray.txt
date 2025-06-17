@@ -1,0 +1,12 @@
+class Main {
+    public static void main(String[] args) {
+    int[] num={100,200,300,400,10};
+    int min=num[0];
+    for(int i=1;i<num.length;i++){
+       if(min>num[i]){
+           min=num[i];
+       }
+    }
+    System.out.println(min);
+    }
+}

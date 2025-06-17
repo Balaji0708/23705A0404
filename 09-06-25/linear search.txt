@@ -1,0 +1,16 @@
+
+class Main
+{
+	public static void main (String[] args)
+	{
+	    int[] n={10,12,45,78,15,24,95,48};
+	    int target=95;
+	    int index=-1;
+	    for(int i=0;i<n.length;i++){
+	        if(target==n[i]){
+	            index=i;
+	        }
+	    }
+	    System.out.println(index==-1?"Element not found":"Element found at the index: "+index);
+	}
+}

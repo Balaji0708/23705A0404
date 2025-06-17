@@ -1,0 +1,76 @@
+public class Main
+{
+	public static void main(String[] args) {
+	Stack stack=new Stack(5);
+	stack.push(20);
+	stack.push(30);
+	stack.push(20);
+	stack.push(30);
+	stack.push(20);
+	stack.pop();
+	stack.push(100);
+	stack.push(20);
+	var s=stack.peak();
+	stack.print();
+	System.out.println("\nPeak value is "+s);
+	}
+}
+class Stack{
+    int[] stack;
+    int size;
+    int top;
+    Stack(int size){
+        this.size=size;
+        this.top=-1;
+        this.stack=new int[size];
+    }
+    boolean isEmpty(){
+        if(top==-1){
+            System.err.println("stack is empty");
+            return true;
+        }
+        else{
+            return false;
+        }
+        
+    }
+    boolean isFull(){
+        if(top==size-1){
+             System.err.println("stack is full");
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    void push(int val){
+        if(isFull()){
+            return;
+        }
+        else{
+            top++;
+            stack[top]=val;
+        }
+    }
+    int pop(){
+        if(isEmpty()){
+            return -1;
+        }
+        else{
+            int val=stack[top];
+            top--;
+            return val;
+        }
+    }
+    int peak(){
+        if(isEmpty()){
+            return -1;
+        }
+        return stack[top];
+    }
+    void print(){
+        for(int i=top;i>=0;i--){
+            System.out.print("-->"+ stack[i]);
+        }
+    }
+}

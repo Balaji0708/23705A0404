@@ -1,0 +1,37 @@
+
+public class Main {
+    public static void main(String[] args) {
+        LinkedList list = new LinkedList();
+        list.insertBeg(40);
+        list.insertBeg(30);
+        list.insertBeg(20);
+        list.insertBeg(10);
+        list.insertBeg(56); 
+        Node temp = list.head;
+        while (temp != null) {
+            System.out.print(temp.data + "-->");
+            temp = temp.next;
+        }
+    }
+}
+
+class Node{
+    int data;
+    Node next;
+    Node(int data){
+        this.data=data;
+        this.next=null;
+    }
+}
+class LinkedList{
+    Node head;
+    LinkedList(){
+        this.head=null;
+    }
+    void insertBeg(int data){
+        Node newNode=new Node(data);
+        newNode.next=head;
+        head=newNode;
+    }
+    
+}

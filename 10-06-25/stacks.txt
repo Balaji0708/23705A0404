@@ -1,0 +1,73 @@
+class Main{
+ public static void main (String[] args) {
+   stack s=new stack(6);
+   s.push(12);
+   s.push(23);
+   s.push(32);
+   s.push(56);
+   s.push(11);
+   s.push(83);
+   s.pop();
+   s.pop();
+   s.pop();
+   s.pop();
+   s.pop();
+   s.pop();
+   s.pop();
+   var nam=s.pop();
+   s.print();
+  System.out.println("pop element from the stack is :"+nam);
+}
+}
+class stack{
+  int[]stack;
+  int size;
+  int top;
+  stack(int size){
+    this.size=size;
+    this.stack=new int[size];
+    this.top=-1;
+  }
+  boolean isFull(){
+    if(top==size-1){
+      System.out.println("Stack is full");
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+  boolean isEmpty(){
+    if(top==-1){
+      System.out.println("stack is empty");
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+  void push(int data){
+    if(isFull()){
+      return;
+    }
+    else{
+      top++;
+      stack[top]=data;
+    }
+  }
+  int pop(){
+    if(isEmpty()){
+      return -1;
+    }
+    else{
+      int data=stack[top];
+      top--;
+      return data;
+    }
+  }
+  void print(){
+    for(int i=top;i>=0;i--){
+      System.out.println("-->"+stack[i]);
+    }
+  }
+}

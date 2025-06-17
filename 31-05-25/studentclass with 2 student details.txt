@@ -1,0 +1,29 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Student{
+    String name;
+    String roll;
+    String branch;
+    int year;
+    char section;
+    void payfee(int amount){
+        System.out.println("paying "+amount+" to the college");
+    }
+    void attendence(int atte){
+        System.out.println("maintaining ing attendence to the student is "+atte);
+    
+    }
+}
+class Main {
+    public static void main(String[] args) {
+  Student s1=new Student();
+  Student s2=new Student();
+  System.out.println(s1.name="BALAJI");
+  System.out.println(s1.roll="qwerty123");
+  System.out.println(s1.branch="ECE");
+  System.out.println(s1.year=4);
+  s1.payfee(5000);
+  s1.attendence(88);
+    }
+}

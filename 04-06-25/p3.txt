@@ -1,0 +1,12 @@
+
+public class Main {
+	public static void main(String[] args) {
+		System.out.println(npowerx(12,5));
+	}
+	public static int npowerx(int n,int x) {
+		if(x==0){
+		return 1;}
+		int val=n*npowerx(n,x-1);
+		return val;
+	}
+}

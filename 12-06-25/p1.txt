@@ -1,0 +1,43 @@
+ public class Main{
+  public static void main(String[] args){
+    Student s1=new Student("Balaji","23705a0404",'A',"ECE");
+    s1.print();
+    s1.feeDetails(75000);
+    System.out.println("<-------------------------------------------->");
+    Student s2=new Student("chimtu","23705a4XX",'A',"ECE");
+    s2.print();
+    s2.feeDetails(78900);
+    System.out.println("<-------------------------------------------->");
+    Student s3=new Student("Chintu","23705a40X",'A',"ECE");
+    s3.print();
+    s3.feeDetails(80000);
+    
+    
+  }
+}
+ class Student{
+   String name;
+   String roll;
+   char section;
+   String branch;
+   Student(String name,String roll,char section,String branch){
+     this.name=name;
+     this.roll=roll;
+     this.section=section;
+     this.branch=branch;
+   }
+   void print(){
+     System.out.println("Student name :"+name+"\n"+"roll number :"+ roll+" \n "+"section :"+ section+"\n" + "branch :"+ branch);
+   }
+   public void feeDetails(int amount){
+     int total=80000;
+     System.out.println("fee paid by the student is :"+amount);
+     var remain=total-amount;
+     if(remain==0){
+       System.out.println("Remaining fee: No due");
+     }else{
+     System.out.println("Remaining balance is :"+remain);
+     }
+   }
+   
+ }
